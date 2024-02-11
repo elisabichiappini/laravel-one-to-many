@@ -15,7 +15,7 @@ return new class extends Migration
             //creo colonna e mi lego da project a types
             $table->unsignedBigInteger('type_id')->nullable()->after('id');
             //la definisco foreign key, quindi dentro il campo di type_id mi riferisco all'id di types 
-            $table->foreign('type_id')->references('id')->on('types');
+            $table->foreign('type_id')->references('id')->on('types')->nullOnDelete();
         });
     }
 
