@@ -10,4 +10,10 @@ class Project extends Model
     use HasFactory;
     
     protected $guarded = ['slug', 'project_img'];
+
+    // definiamo la cardinalità
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }
 }
+//dipendente
