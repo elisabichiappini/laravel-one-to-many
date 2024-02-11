@@ -11,7 +11,7 @@ class Type extends Model
     use HasFactory;
     
     // definiamo la cardinalità
-    public function posts() {
+    public function projects() {
         return $this->hasMany(Project::class);
     }
 }
