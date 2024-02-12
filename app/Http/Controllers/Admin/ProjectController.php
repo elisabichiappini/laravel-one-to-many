@@ -45,12 +45,12 @@ class ProjectController extends Controller
         $project->title = $data['title'];
         $project->tools = $data['tools'];
         $project->slug = Str::of($project->title)->slug('-');
+        $project->type_id = $data['type_id'];
         $project->description = $data['description'];
         if(isset($data->project_img)) {
             $project->project_img = Storage::put('uploads', $data['project_img']);
         }
-        // $project->born = $data['born'];
-        // $project->type = $data['type'];
+
         $project->save();
 
         //redirect alla lista progetti 

@@ -19,7 +19,7 @@
     <h3>{{ $project->tools }} </h3>
     <p>{{ $project->description}}</p>
     <span class="badge text-bg-success">
-        Tipologia: {{ $project->type->title }}
+        Tipologia: {{ $project->type?->title }}
     </span>
 
 
