@@ -30,6 +30,17 @@
             <label for="project_img" class="form-label">Carica immagine</label>
             <input class="form-control" type="file" id="project_img" name="project_img" value="{{ old('project_img', $project->project_img) }}">
         </div>
+        <!-- selezione type per il progetto-->
+        <div class="mb-3">
+            <label for="type"></label>
+            <select class="form-select" id="type" name="types">
+                <option selected>Categoria progetto</option>
+                @foreach ( $types as $type )
+                    <option value="{{ $type->id }}" @if (old('type', $project->type_id) == $type->id) selected @endif >{{ $type->title }}</option>
+                @endforeach
+            </select>
+        </div>
+        <!-- selezione type per il progetto-->
         <div class="mb-3">
             <label for="born" class="form-label">Creato il</label>
             <input type="text" class="form-control" id="born" name="born" value="{{ old('born', $project->born) }}">
