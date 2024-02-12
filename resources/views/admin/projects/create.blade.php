@@ -32,6 +32,16 @@
             <label for="born" class="form-label">Creato il</label>
             <input type="text" class="form-control" id="born" name="born" value="{{ old('born') }}">
         </div>
+        <!--inline checkbox to technologies-->
+        <div class="mb-3">
+            @foreach ( $technologies as $technology)
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="technologies[]" id="technology-{{ $technology->id }}" value="{{ $technology->id }}">
+                <label class="form-check-label" for="technology-{{ $technology->id}}">{{ $technology->title }}</label>
+            </div>
+            @endforeach
+        </div>
+        <!--inline checkbox-->
         <div class="mb-3">
             <label for="tools" class="form-label">Strumenti</label>
             <input type="text" class="form-control" id="tools" name="tools" value="{{ old('tools') }}">
