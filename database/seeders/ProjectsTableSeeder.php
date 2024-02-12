@@ -26,7 +26,7 @@ class ProjectsTableSeeder extends Seeder
             $project = new Project();
             //definisco le proprietà di ogni project
             $project->title = $faker->sentence(2);
-            $project->type_id = $type->id;
+ 
             $project->slug = Str::of($project->title)->slug('-');
             $project->tools = $faker->sentence(2);
             $project->description = $faker->text(300);
