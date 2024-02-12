@@ -34,7 +34,7 @@
             <select class="form-select" id="type" name="types">
                 <option selected>Categoria progetto</option>
                 @foreach ( $types as $type )
-                    <option value="{{ $type->id }}">{{ $type->title }}</option>
+                    <option value="{{ $type->id }}" @if (old('type') == $type->id) selected @endif >{{ $type->title }}</option>
                 @endforeach
             </select>
         </div>
