@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -26,7 +27,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        //query
+        $types = Type::all();
+        return view('admin.projects.create', compact('types'));
     }
 
     /**
@@ -43,7 +46,9 @@ class ProjectController extends Controller
         $project->tools = $data['tools'];
         $project->slug = Str::of($project->title)->slug('-');
         $project->description = $data['description'];
-        $project->project_img = Storage::put('uploads', $data['project_img']);
+        if(isset($data->project_img)) {
+            $project->project_img = Storage::put('uploads', $data['project_img']);
+        }
         // $project->born = $data['born'];
         // $project->type = $data['type'];
         $project->save();
