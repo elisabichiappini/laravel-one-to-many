@@ -47,10 +47,16 @@ class ProjectController extends Controller
         $project->tools = $data['tools'];
         $project->slug = Str::of($project->title)->slug('-');
         $project->description = $data['description'];
-        $project->project_img = Storage::put('uploads', $data['project_img']);
-        // $project->born = $data['born'];
-        // $project->type = $data['type'];
+        // salvo se è settata la check delle immagini
+        if (isset($data['project_img'])) {
+            $project->project_img = Storage::put('uploads', $data['project_img']);
+        }
         $project->save();
+
+        // salvo se è settata la check delle technologies
+        if (isset($data['technologies'])) {
+            $project->technologies()->sync($data['technologies']);
+        }
 
         //redirect alla lista progetti 
         return redirect()->route('admin.projects.index')->with('message', "Progetto $project->id creato correttamente");
