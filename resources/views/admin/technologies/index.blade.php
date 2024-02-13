@@ -39,7 +39,6 @@
                 <td>{{ $technology->title }}</td>
                 <td>{{ $technology->slug }}</td>
                 <td class="text-end">
-                    <a href="{{ route('admin.technologies.show', $technology) }}" class="btn btn-info" role="button">Dettaglio</a>
                     <a href="{{ route('admin.technologies.edit', $technology) }}" class="btn btn-primary" role="button">Modifica</a>
                     <form action="{{ route('admin.technologies.destroy', $technology) }}" method="POST" class="d-inline">
                         <!--token-->

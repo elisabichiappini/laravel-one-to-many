@@ -31,8 +31,8 @@ Route::middleware(['auth', 'verified'])
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         //rotta resource projects
         Route::resource('projects', ProjectController::class)->parameters(['projects'=>'project:slug']);
-        //rotta resource technologies
-        Route::resource('technologies', TechnologyController::class)->parameters(['technologies'=>'technology:slug']);
+        //rotta resource technologies escludendo la rotta show
+        Route::resource('technologies', TechnologyController::class)->parameters(['technologies'=>'technology:slug'])->except('show');
     });
 
 require __DIR__.'/auth.php';
