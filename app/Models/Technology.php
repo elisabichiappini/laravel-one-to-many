@@ -13,6 +13,6 @@ class Technology extends Model
 
     //relazione più tecnologie possono appartenere a più progetti
     public function projects() {
-        return $this->belongsToMany(Project::class);
+        return $this->belongsToMany(Project::class)->withTimestamps();
     }
 }
