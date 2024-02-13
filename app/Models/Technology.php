@@ -11,6 +11,7 @@ class Technology extends Model
     // se pensiamo di passare progetti alle tecnologie nelle crud
     protected $guarded = ['project'];
 
+    //relazione più tecnologie possono appartenere a più progetti
     public function projects() {
         return $this->belongsToMany(Project::class);
     }
