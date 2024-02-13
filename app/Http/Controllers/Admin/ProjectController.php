@@ -51,6 +51,9 @@ class ProjectController extends Controller
         if (isset($data['project_img'])) {
             $project->project_img = Storage::put('uploads', $data['project_img']);
         }
+        //controllo invio dati img
+        // dd($request->project_img);
+
         $project->save();
 
         // salvo se è settata la check delle technologies

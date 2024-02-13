@@ -28,11 +28,7 @@
         <ul>   
             @foreach ( $project->technologies as $technology )
             <li>
-                @if($technology) 
-                <span class="badge text-bg-warning">{{ $technology->title }}</span>
-                @else 
-                <span class="badge text-bg-danger">Nessuna tecnologia attribuita</span>
-                @endif
+                <span class="badge text-bg-warning">{{ $technology?->title ?: 'Nessuna tecnologia attribuita' }}</span>
             </li>
             @endforeach
         </ul>
