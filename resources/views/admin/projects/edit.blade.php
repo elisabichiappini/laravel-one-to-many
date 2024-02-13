@@ -16,7 +16,7 @@
     @include('partials.errors')
     <!--/mostra errori di validazione in variabile di sessione-->
     <!--form-->
-    <form action="{{ route('admin.projects.update', $project)}}" method="POST">
+    <form action="{{ route('admin.projects.update', $project)}}" method="POST" enctype="multipart/form-data">
         <!--token per validazione form-->
         @csrf
         <!--/token per validazione form-->
