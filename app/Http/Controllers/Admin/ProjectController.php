@@ -108,6 +108,7 @@ class ProjectController extends Controller
         if($project->project_img) {
             Storage::delete('project_img');
         }
+        //rimuovo eventuali relazioni per svuotare la tabella pivot
         $project->technologies()->sync([]);
         //salvo in variabile il valore id del progetto
         $project_id = $project->id;
