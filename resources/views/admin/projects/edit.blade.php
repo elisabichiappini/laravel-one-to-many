@@ -34,31 +34,19 @@
             <label for="born" class="form-label">Creato il</label>
             <input type="text" class="form-control" id="born" name="born" value="{{ old('born', $project->born) }}">
         </div>
+
         <!--elemento type-->
-
-
-
-
-
-
-
         <div class="mb-3">
             <label for="type_id" class="form-label">Categoria</label>
             <select id="type_id" class="form-select" name="type_id">
-                <!-- TO DO -->
                 <option selected value="{{ old('type_id') }}">Scegli la categoria</option>
-                <!-- TO DO -->
                 @foreach ( $types as $type)
-                <option value="{{ old('type_id',$type->id) }}">{{ $type->title }}</option>
+                <option value="{{  $type->id }}" @if (old('type_id', $project->type_id)== $type->id) selected @endif>{{ $type->title }}</option>
                 @endforeach
               </select>
         </div>
-
-
-
-
-
         <!--/elemento type-->
+
         <!--inline checkbox to technologies-->
         <div class="mb-3">
             @foreach ( $technologies as $technology)
