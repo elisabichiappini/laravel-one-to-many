@@ -35,15 +35,27 @@
             <input type="text" class="form-control" id="born" name="born" value="{{ old('born', $project->born) }}">
         </div>
         <!--elemento type-->
+
+
+
+
+
+
+
         <div class="mb-3">
-            <label for="born" class="form-label">Categoria</label>
-            <select class="form-select" name="types">
-                <option selected>Open this select menu</option>
+            <label for="type_id" class="form-label">Categoria</label>
+            <select id="type_id" class="form-select" name="type_id">
+                <option selected value="">Scegli la categoria</option>
                 @foreach ( $types as $type)
-                <option value="{{ old('title') }}">{{ $type->title}}</option>
+                <option value="{{ old('type_id',$type->id) }}">{{ $type->title }}</option>
                 @endforeach
               </select>
         </div>
+
+
+
+
+
         <!--/elemento type-->
         <!--inline checkbox to technologies-->
         <div class="mb-3">
@@ -62,7 +74,7 @@
         <!--inline checkbox to technologies-->
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
-            <textarea class="form-control" id="description" rows="5" name="description">{{ old('description', $project->description) }}"</textarea>
+            <textarea class="form-control" id="description" rows="5" name="description">{{ old('description', $project->description) }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Modifica</button>
     </form>

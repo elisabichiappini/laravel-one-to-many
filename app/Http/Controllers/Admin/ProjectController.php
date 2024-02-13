@@ -50,6 +50,7 @@ class ProjectController extends Controller
 
         $project->slug = Str::of($project->title)->slug('-');
         $project->description = $data['description'];
+        $project->type_id = $data['type_id'];
         // salvo se è settata la check delle immagini
         if (isset($data['project_img'])) {
             $project->project_img = Storage::put('uploads', $data['project_img']);

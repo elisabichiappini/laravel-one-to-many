@@ -27,7 +27,7 @@
     <div>
        <h5>Tags: </h5>
         @forelse ( $project->technologies as $technology )
-            <span class="badge text-bg-warning">{{ $technology->title  }}</span>
+            <span class="badge text-bg-warning">{{ $technology->title }}</span>
         @empty 
             <span class="badge text-bg-warning">Nessuna tech attribuita</span>
         @endforelse
