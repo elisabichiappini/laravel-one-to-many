@@ -17,23 +17,20 @@
     <h2>{{ $project->title }}</h2>
     <!--elemento type-->
     <div>
+        <h5>Categoria: </h5>
         <span class="badge text-bg-info">
-            Categoria: {{ $project->types?->title ?: 'Nessuna categoria' }}
+            {{ $project->type?->title ?: 'Nessuna categoria' }}
         </span>
     </div>
     <!--/elemento type-->
     <!--elemento tecnologia-->
     <div>
-        <h5>Tags</h5>
-        <ul>   
-            @foreach ( $project->technologies as $technology )
-            <li>
-                <!--TO DO-->
-                <span class="badge text-bg-warning">{{ $technology ? $technology->title : 'Nessuna tecnologia attribuita' }}</span>
-                <!--TO DO-->
-            </li>
-            @endforeach
-        </ul>
+       <h5>Tags: </h5>
+        @forelse ( $project->technologies as $technology )
+            <span class="badge text-bg-warning">{{ $technology->title  }}</span>
+        @empty 
+            <span class="badge text-bg-warning">Nessuna tech attribuita</span>
+        @endforelse
     </div>
     <!--/elemento tecnologia-->
     <h6>{{ $project->born }}</h6>

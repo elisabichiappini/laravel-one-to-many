@@ -47,8 +47,7 @@ class ProjectController extends Controller
         $project = new Project();
         //massstore a mano
         $project->title = $data['title'];
-        $project->tools = $data['tools'];
-        $project->types = $data['types'];
+
         $project->slug = Str::of($project->title)->slug('-');
         $project->description = $data['description'];
         // salvo se è settata la check delle immagini
