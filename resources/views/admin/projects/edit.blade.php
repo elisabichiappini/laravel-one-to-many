@@ -45,7 +45,9 @@
         <div class="mb-3">
             <label for="type_id" class="form-label">Categoria</label>
             <select id="type_id" class="form-select" name="type_id">
-                <option selected value="">Scegli la categoria</option>
+                <!-- TO DO -->
+                <option selected value="{{ old('type_id') }}">Scegli la categoria</option>
+                <!-- TO DO -->
                 @foreach ( $types as $type)
                 <option value="{{ old('type_id',$type->id) }}">{{ $type->title }}</option>
                 @endforeach
