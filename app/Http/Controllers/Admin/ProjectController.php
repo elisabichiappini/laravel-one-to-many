@@ -88,6 +88,12 @@ class ProjectController extends Controller
         $data = $request->validated();
         //campo fatto a mano
         $project->slug = Str::of($data['title'])->slug('-');
+        // salvo se è settata la check delle technologies
+        if (isset($data['technologies'])) {
+            $project->technologies()->sync($data['technologies']);
+        } else {
+            $project->technologies()->sync([]);
+        }
         //competenza di laravel di salvare i dati
         $project->update($data);
         //redirect alla lista 
