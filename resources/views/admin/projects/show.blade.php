@@ -18,7 +18,7 @@
     <!--elemento type-->
     <div>
         <span class="badge text-bg-info">
-            Categoria: {{ $project->type?->title ?: 'Nessuna categoria' }}
+            Categoria: {{ $project->types?->title ?: 'Nessuna categoria' }}
         </span>
     </div>
     <!--/elemento type-->
@@ -28,15 +28,15 @@
         <ul>   
             @foreach ( $project->technologies as $technology )
             <li>
-                <span class="badge text-bg-warning">{{ $technology?->title ?: 'Nessuna tecnologia attribuita' }}</span>
+                <!--TO DO-->
+                <span class="badge text-bg-warning">{{ $technology ? $technology->title : 'Nessuna tecnologia attribuita' }}</span>
+                <!--TO DO-->
             </li>
             @endforeach
         </ul>
     </div>
     <!--/elemento tecnologia-->
     <h6>{{ $project->born }}</h6>
-    <h3>{{ $project->tools }} </h3>
-    
     <p>{{ $project->description}}</p>
     @if ($project->project_img)
         <img src="{{ asset('storage/' . $project->project_img) }}" alt="{{ $project->title }}">

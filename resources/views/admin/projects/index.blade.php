@@ -29,7 +29,6 @@
                 <th scope="col">Nome progetto</th>
                 <th scope="col">Immagine</th>
                 <th scope="col">Data creazione</th>
-                <th scope="col">Strumenti</th>
                 <!--bottoni-->
                 <th scope="col"></th>
                 <!--/bottoni-->
@@ -46,7 +45,6 @@
                     @endif
                 </td>
                 <td>{{ $project->born }}</td>
-                <td>{{ $project->tools }}</td>
                 <td class="text-end">
                     <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-info" role="button">Dettaglio</a>
                     <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-primary" role="button">Modifica</a>

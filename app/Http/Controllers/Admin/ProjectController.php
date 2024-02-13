@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use App\Models\Technology;
+use App\Models\Type;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -29,8 +30,10 @@ class ProjectController extends Controller
     {
         //get all technologies
         $technologies = Technology::all();
+        //get all types
+        $types = Type::all();
 
-        return view('admin.projects.create', compact('technologies'));
+        return view('admin.projects.create', compact('technologies', 'types'));
     }
 
     /**
@@ -45,6 +48,7 @@ class ProjectController extends Controller
         //massstore a mano
         $project->title = $data['title'];
         $project->tools = $data['tools'];
+        $project->types = $data['types'];
         $project->slug = Str::of($project->title)->slug('-');
         $project->description = $data['description'];
         // salvo se è settata la check delle immagini
@@ -78,8 +82,11 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
+        //get all technologies
         $technologies = Technology::all();
-        return view('admin.projects.edit', compact('project', 'technologies'));
+        //get all types
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project', 'technologies', 'types'));
     }
 
     /**
