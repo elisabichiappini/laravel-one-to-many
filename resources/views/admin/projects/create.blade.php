@@ -41,7 +41,7 @@
             </div>
             @endforeach
         </div>
-        <!--inline checkbox-->
+        <!--inline checkbox to technologies-->
         <div class="mb-3">
             <label for="tools" class="form-label">Strumenti</label>
             <input type="text" class="form-control" id="tools" name="tools" value="{{ old('tools') }}">
