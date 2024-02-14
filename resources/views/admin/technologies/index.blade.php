@@ -6,7 +6,7 @@
         <!--bottone per tornare alla lista tecnologie-->
         <div class="ec-button">
             <!--bottone per di creare una nuova tecnologia-->
-            <a href="{{ route('admin.projects.create') }}" class="btn btn-warning my-3">Nuova tecnologia</a>
+            <a href="{{ route('admin.technologies.create') }}" class="btn btn-warning my-3">Nuova tecnologia</a>
             <!--/bottone per di creare una nuova tecnologia-->
         </div>
         <!--bottone per tornare alla lista tecnologie-->
