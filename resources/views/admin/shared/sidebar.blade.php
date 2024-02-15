@@ -11,13 +11,19 @@
             <li class="nav-item">
                 <a class="nav-link text-white {{ Route::currentRouteName() == 'projects' ? 'bg-secondary' : '' }}"
                     href="{{ route('admin.projects.index') }}">
-                    {{-- <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> --}} Projects
+                    {{-- <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> --}} Progetti
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white {{ Route::currentRouteName() == 'technologies' ? 'bg-secondary' : '' }}"
                     href="{{ route('admin.technologies.index') }}">
-                    {{-- <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> --}} Technologies
+                    {{-- <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> --}} Tags
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{ Route::currentRouteName() == 'types' ? 'bg-secondary' : '' }}"
+                    href="{{ route('admin.types.index') }}">
+                    {{-- <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> --}} Categorie
                 </a>
             </li>
         </ul>

@@ -6,7 +6,8 @@ use Illuminate\Foundation\Http\FormRequest;
 //import validation rule
 use Illuminate\Validation\Rule;
 
-class UpdateProjectRequest extends FormRequest
+
+class UpdateTypeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +25,8 @@ class UpdateProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', Rule::unique('projects')->ignore($this->project), 'max:48', 'string'],
-            'project_img' => ['nullable', 'image', 'max:2048'],
-            'description' => ['max:400'],
-            //per validazione in update
-            'type_id' => ['nullable', 'exists:types,id'],
-            'technologies' => ['nullable', 'exists:technologies,id']
+            'title' => ['required', Rule::unique('types')->ignore($this->type), 'max:48', 'string'],
+            'slug' => ['nullable']
         ];
     }
 }

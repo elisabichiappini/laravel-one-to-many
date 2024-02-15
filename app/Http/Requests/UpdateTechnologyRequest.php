@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+//import validation rule
 use Illuminate\Validation\Rule;
 
 class UpdateTechnologyRequest extends FormRequest
