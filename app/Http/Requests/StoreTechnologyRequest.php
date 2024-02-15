@@ -22,7 +22,8 @@ class StoreTechnologyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => ['required', 'unique:technologies,title', 'max:50', 'string'],
+            'slug' => ['nullable']
         ];
     }
 }
